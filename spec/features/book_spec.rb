@@ -22,10 +22,12 @@ RSpec.describe "Book Features", type: :feature do
 
     click_on "Create Book"
 
+    visit root_path
+
     expect(page).to have_content "A wrinkle in time"
     expect(page).to have_content "Square Fish"
 
-    click_link "A wrinkle in time"
+    first(:link, "A wrinkle in time").click
 
     expect(page).to have_content "Madeleine L'Engle"
     expect(page).to have_content "9780786273355"
