@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book:</strong>
+  <%= @loaned_book.book_id %>
+</p>
+
+<p>
+  <strong>Borrower:</strong>
+  <%= @loaned_book.borrower_id %>
+</p>
+
+<p>
+  <strong>Due date time:</strong>
+  <%= @loaned_book.due_date_time %>
+</p>
+
+<%= link_to 'Edit', edit_loaned_book_path(@loaned_book) %> |
+<%= link_to 'Back', loaned_books_path %>
