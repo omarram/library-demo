@@ -58,7 +58,7 @@ power.)
   book.isbn = "978-0321584106"
   book.publisher = "Addison-Wesley"
   book.published_on = "2011-02-21"
-  book.cover_url = "http://ecx.images-amazon.com/images/I/41IDuwJXFCL._SX258_BO1,204,203,200_.jpg"
+  book.image = "http://ecx.images-amazon.com/images/I/41IDuwJXFCL._SX258_BO1,204,203,200_.jpg"
   book.authors << russ_olsen
 end
 
@@ -67,7 +67,7 @@ Book.find_or_create_by title: "Agile Web Development with Rails 4" do |book|
   book.isbn = "978-1937785567"
   book.publisher = "Pragmatic Bookshelf"
   book.published_on = "2013-10-11"
-  book.cover_url = "https://imagery.pragprog.com/products/196/rails4_xlargecover.jpg"
+  book.image = "https://imagery.pragprog.com/products/196/rails4_xlargecover.jpg"
   book.authors << [sam_ruby, dave_thomas, dhh]
 end
 
@@ -76,7 +76,7 @@ Book.find_or_create_by title: "Practical Object-Oriented Design in Ruby" do |boo
   book.isbn = "078-5342721331"
   book.publisher = "Addison-Wesley"
   book.published_on = "2012-09-15"
-  book.cover_url = "http://ecx.images-amazon.com/images/I/51U-Wi%2BkYvL._SY344_BO1,204,203,200_.jpg"
+  book.image = "http://ecx.images-amazon.com/images/I/51U-Wi%2BkYvL._SY344_BO1,204,203,200_.jpg"
   book.authors << sandi_metz
 end
 
@@ -85,7 +85,7 @@ Book.find_or_create_by title: "Metaprogramming Ruby 2" do |book|
   book.isbn = "978-1941222126"
   book.publisher = "Pragmatic Bookshelf"
   book.published_on = "2014-08-18"
-  book.cover_url = "https://imagery.pragprog.com/products/337/ppmetr2_xlargecover.jpg"
+  book.image = "https://imagery.pragprog.com/products/337/ppmetr2_xlargecover.jpg"
   book.authors << paolo_perrotta
 end
 
@@ -94,7 +94,7 @@ Book.find_or_create_by title: "The Pragmatic Programmer: From Journeyman to Mast
   book.isbn = "078-5342616224"
   book.publisher = "Addison-Wesley"
   book.published_on = "1999-10-30"
-  book.cover_url = "https://imagery.pragprog.com/products/59/tpp_xlargecover.jpg"
+  book.image = "https://imagery.pragprog.com/products/59/tpp_xlargecover.jpg"
   book.authors << [dave_thomas, andy_hunt]
 end
 
