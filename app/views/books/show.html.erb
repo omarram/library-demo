@@ -38,8 +38,12 @@
     <% @book.borrowers.each do |borrower|%>
       <%= borrower.name %>
     <% end %>
+    On
+    <% @book.loaned_books.each do |loan|%>
+      <%= loan.created_at %>
+    <% end %>
   <% else %>
-    <%= "No" %>
+    <%= "No, you can lend it to someone." %>
   <% end %>
 </p>
 
