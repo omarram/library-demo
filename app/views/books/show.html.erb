@@ -31,5 +31,10 @@
   <%= @book.published_on %>
 </p>
 
+<p>
+  <strong>On Loan?</strong>
+  <%= @book.on_loan ? 'Yes' : 'No, The Book is Available!' %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
