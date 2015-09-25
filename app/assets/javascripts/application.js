@@ -19,6 +19,14 @@
 //= require bootstrap-datepicker
 //= require_tree .
 
+$(document).ready(function() {
+  setTimeout(function() {
+    $('#notice_wrapper').fadeOut("slow", function() {
+      $(this).remove();
+    });
+  }, 900);
+});
+
 ready = function() {
   $('.datepicker, .input-group.date').datepicker({
     format: "yyyy-mm-dd"
