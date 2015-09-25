@@ -1,0 +1,47 @@
+<h1>Check Out</h1>
+
+<%= form_for(:book, url: {action: :check_out}) do |f| %>
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, size: 20, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-sm-2">
+      <%= f.label :due_time %><br>
+      <div class="input-group date">
+        <%= f.text_field :due_time, class: "form-control" %>
+        <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
+      </div>
+    </div>
+  </div>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+   <i class="icon-ok icon-white"></i> Check Out!
+  <% end %>
+<% end %>  
+
+<hr>
+
+<h1>Check In</h1>
+
+<%= form_for(:book, url: {action: :check_in}) do |f| %>
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <%= f.label :title %><br>
+      <%= f.text_field :title, size: 20, class: "form-control" %>
+    </div>
+  </div>
+  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+   <i class="icon-ok icon-white"></i> Check In!
+  <% end %>
+<% end %>  
+
+<h2>Borrowed Books List</h2>
+<h3><%= button_to "Borrowed Books List", action: :borrow_list %></h3>

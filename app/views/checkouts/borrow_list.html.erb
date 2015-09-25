@@ -1,0 +1,26 @@
+<h1>Gary's list of borrowed books</h1>
+<table>
+  <tr>
+    <th>Author</th>
+    <th>Title</th>
+    <th>ISBN</th>
+    <th>Borrower Name</th>
+  </tr>
+
+  <% for item in @books_loaned %>
+    <tr>
+      <td>
+        <% item.book.authors.each do |author| %>
+         <%= author.name %>
+        <% end %>
+      </td>
+      <td><%= item.book.title %></td>
+      <td><%= item.book.isbn %></td>
+      <td><%= item.borrower.name %></td>   
+    </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Back', checkouts_index_path %>

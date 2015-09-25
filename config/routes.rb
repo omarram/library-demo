@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'checkouts/index'
+  post 'checkouts/check_out'
+  post 'checkouts/check_in'
+  post 'checkouts/borrow_list'
+
   resources :loaned_books
   resources :borrowers
   resources :authors
