@@ -4,7 +4,7 @@
   <div class="row">
     <div class="form-group col-sm-4">
       <%= f.label :title %><br>
-      <%= f.text_field :title, size: 20, class: "form-control" %>
+      <%= f.autocomplete_field :title, autocomplete_book_title_books_path, class: "form-control" %>
     </div>
   </div>
   <div class="row">
@@ -15,9 +15,9 @@
   </div>
   <div class="row">
     <div class="form-group col-sm-2">
-      <%= f.label :due_time %><br>
+      <%= f.label :due_date_time %><br>
       <div class="input-group date">
-        <%= f.text_field :due_time, class: "form-control" %>
+        <%= f.datetime_select :due_date_time, class: "form-control" %>
         <span class="input-group-addon"><i class="glyphicon glyphicon-th"></i></span>
       </div>
     </div>
@@ -35,7 +35,7 @@
   <div class="row">
     <div class="form-group col-sm-4">
       <%= f.label :title %><br>
-      <%= f.text_field :title, size: 20, class: "form-control" %>
+      <%= f.autocomplete_field :title, autocomplete_book_title_books_path, size: 20, class: "form-control" %>
     </div>
   </div>
   <%= button_tag(type: 'submit', class: "btn btn-primary") do %>

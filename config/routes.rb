@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   resources :loaned_books
   resources :borrowers
   resources :authors
-  resources :books
+  resources :books do
+    get :autocomplete_book_title, :on => :collection
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

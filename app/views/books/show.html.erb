@@ -33,8 +33,17 @@
 
 <p>
   <strong>On Loan?</strong>
-  <%= @book.on_loan ? 'Yes' : 'No, The Book is Available!' %>
+  <% if @book.on_loan == true %>
+    Checked out by
+    <% @book.borrowers.each do |borrower|%>
+      <%= borrower.name %>
+    <% end %>
+  <% else %>
+    <%= "No" %>
+  <% end %>
 </p>
+
+
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

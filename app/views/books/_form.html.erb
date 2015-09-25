@@ -52,12 +52,6 @@
   </div>
   <div class="row">
     <div class="form-group col-sm-4">
-      <%= f.label :on_loan %><br>
-      <%= f.check_box :on_loan, class: "form-control" %>
-    </div>
-  </div>
-  <div class="row">
-    <div class="form-group col-sm-4">
       <h4>Authors</h3>
       <%= hidden_field_tag "book[author_ids][]", nil %>
       <% Author.all.each do |author| %>

@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  autocomplete :book, :title, :full => true
   before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   # GET /books

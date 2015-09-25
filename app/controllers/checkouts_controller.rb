@@ -13,7 +13,7 @@ class CheckoutsController < ApplicationController
     elsif @book == nil
       @note = 'This book doesnt exist in the library.'
     elsif @book.on_loan == true
-      @note = 'This book is borrowed.'
+      @note = 'This book is already borrowed by someone else.'
     else
       @book.on_loan = true
       @book.save
@@ -38,7 +38,7 @@ class CheckoutsController < ApplicationController
         @books_loaned.destroy
         @note = 'The book was successfully checked in.'
       else
-        @note = 'Error while trying to check in the loaned book'
+        @note = 'Error while trying to check in, possibly the borrowed book is already checked in.'
       end
     else
       @note = 'Book not found'

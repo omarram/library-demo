@@ -1,26 +1,37 @@
-<h1>Gary's list of borrowed books</h1>
-<table>
-  <tr>
-    <th>Author</th>
-    <th>Title</th>
-    <th>ISBN</th>
-    <th>Borrower Name</th>
-  </tr>
+<p id="notice"><%= notice %></p>
 
-  <% for item in @books_loaned %>
+<h1>Gary's list of checked out books</h1>
+
+<table class="table">
+  <thead>
     <tr>
-      <td>
-        <% item.book.authors.each do |author| %>
-         <%= author.name %>
-        <% end %>
-      </td>
-      <td><%= item.book.title %></td>
-      <td><%= item.book.isbn %></td>
-      <td><%= item.borrower.name %></td>   
+      <th>Author</th>
+      <th>Title</th>
+      <th>ISBN</th>
+      <th>Borrower Name</th>
+      <th>Date Borrowed</th>
+      <th>Due Date/Time</th>
     </tr>
-  <% end %>
+  </thead>
+
+  <tbody>
+    <% @books_loaned.each do |item| %>
+      <tr>
+        <td>
+          <% item.book.authors.each do |author| %>
+           <%= author.name %>
+          <% end %>
+        </td>
+        <td><%= item.book.title %></td>
+        <td><%= item.book.isbn %></td>
+        <td><%= item.borrower.name %></td>   
+        <td><%= item.created_at %></td>
+        <td><%= item.due_date_time %></td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'Back', checkouts_index_path %>
+<%= link_to 'Back', checkouts_index_path, class: "btn btn-primary btn-large pull-right" %>
