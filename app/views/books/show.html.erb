@@ -40,5 +40,11 @@
   <% end %>
 </p>
 
+<p>
+  <%= link_to borrowed_books_path do %>
+    <span class="glyphicon glyphicon-book"> See Borrowed Books List</span>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>
