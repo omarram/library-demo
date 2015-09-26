@@ -42,6 +42,8 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
+  # Needed to Upload images
+  gem 'paperclip', '~> 4.3.1'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'

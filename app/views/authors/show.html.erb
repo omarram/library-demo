@@ -10,7 +10,7 @@
 <p>
   <strong>Books:</strong>
   <% @author.books.each do |book| %>
-    <%= link_to image_tag(book.cover_url, alt: book.title), book %>
+    <%= link_to image_tag(book.image.url(:medium), alt: book.title), book %>
   <% end %>
 </p>
 
