@@ -14,8 +14,8 @@
   <%= f.hidden_field :book_id, value: params[:book_id] %>
   <div class="row">
     <div class="form-group col-sm-4">
-    <%= f.label :borrower_id, "Borrower ID" %><br>
-    <%= f.select :borrower_id, 1..@borrower_count %>
+    <%= f.label :borrower_id, "Borrower" %><br>
+    <%= f.select :borrower_id, @borrowers.map {|s| [s.name, s.id]} %>
     </div>
   </div>
 
