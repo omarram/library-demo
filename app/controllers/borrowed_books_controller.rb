@@ -16,6 +16,7 @@ class BorrowedBooksController < ApplicationController
   def new
     @params = params[:book_id]
     @borrowed_book = BorrowedBook.new
+    @borrower_count = Borrower.count
   end
 
   # GET /borrowed_books/1/edit
@@ -32,6 +33,7 @@ class BorrowedBooksController < ApplicationController
         format.html { redirect_to @borrowed_book, notice: 'Borrowed book was successfully created.' }
         format.json { render :show, status: :created, location: @borrowed_book }
       else
+        @borrower_count = Borrower.count
         format.html { render :new }
         format.json { render json: @borrowed_book.errors, status: :unprocessable_entity }
       end
