@@ -31,5 +31,14 @@
   <%= @book.published_on %>
 </p>
 
+<p>
+  <strong>Borrowing Status:</strong>
+  <% if @book.borrowers.empty? == true%>
+    <%= "The book is available, you can lend it to someone" %>
+  <% else %>
+    <%= "The book is borrowed by #{@book.borrowers.first.name}" %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_book_path(@book) %> |
 <%= link_to 'Back', books_path %>

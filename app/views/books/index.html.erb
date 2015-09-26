@@ -10,6 +10,7 @@
       <th></th>
       <th>Title</th>
       <th>Publisher</th>
+      <th>Book status</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -22,11 +23,17 @@
         </td>
         <td><%= link_to book.title, book %></td>
         <td><%= book.publisher %></td>
+
         <td class="centered">
-          <%= link_to new_borrowed_book_path(book_id: book.id) do %>
-            <span class="glyphicon glyphicon-check"> Checkout</span>
+          <% if book.borrowed_books.empty? == true %>
+            <%= link_to new_borrowed_book_path(book_id: book.id) do %>
+              <span class="glyphicon glyphicon-check"> Checkout</span>
+            <% end %>
+          <% else %>
+            <%= "#{book.borrowers.first.name} has it" %>
           <% end %>
         </td>
+
         <td class="centered">
           <%= link_to edit_book_path(book) do %>
             <span class="glyphicon glyphicon-pencil"> Edit</span>

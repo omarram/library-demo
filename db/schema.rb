@@ -28,9 +28,8 @@ ActiveRecord::Schema.define(version: 20150926141437) do
     t.string   "publisher"
     t.date     "published_on"
     t.string   "cover_url"
-    t.boolean  "on_loan",      default: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "borrowed_books", force: :cascade do |t|

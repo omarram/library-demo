@@ -7,8 +7,9 @@
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>Name</th>
-      <th class="centered">Number of books Borrowed</th>
+      <th class="centered">Number of borrowed books</th>
       <th colspan="2"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
   <tbody>
     <% @borrowers.each do |borrower| %>
       <tr>
+        <td><%= borrower.id %></td>
         <td><%= borrower.name %></td>
         <td class="centered"><%= borrower.books.count %></td>
         <td class="centered">

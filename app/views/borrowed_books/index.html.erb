@@ -1,12 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Borrowed Books</h1>
+<h1>Borrowed Books List</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Book</th>
-      <th>Borrower</th>
+      <th class="centered">Borrower</th>
+      <th>Due Date and Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,16 +15,23 @@
   <tbody>
     <% @borrowed_books.each do |borrowed_book| %>
       <tr>
-        <td><%= borrowed_book.book_id %></td>
-        <td><%= borrowed_book.borrower_id %></td>
-        <td><%= link_to 'Show', borrowed_book %></td>
-        <td><%= link_to 'Edit', edit_borrowed_book_path(borrowed_book) %></td>
-        <td><%= link_to 'Destroy', borrowed_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= borrowed_book.book.title %></td>
+        <td class="centered"><%= borrowed_book.borrower.name %></td>
+        <td class="centered"><%= borrowed_book.due_date.strftime("%H:%M %p, %A, %B %d, %Y (%Z)") %></td>
+
+        <td class="centered">
+          <%= link_to edit_borrowed_book_path(borrowed_book) do %>
+            <span class="glyphicon glyphicon-pencil"> Edit</span>
+          <% end %>
+        </td>
+
+        <td class="centered">
+          <%= link_to borrowed_book, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash"> Destroy</span>
+          <% end %>
+        </td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Borrowed book', new_borrowed_book_path %>
