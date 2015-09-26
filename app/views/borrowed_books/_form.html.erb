@@ -1,7 +1,7 @@
 <%= form_for(@borrowed_book) do |f| %>
   <% if @borrowed_book.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@borrowed_book.errors.count, "error") %> prohibited this borrowed_book from being saved:</h2>
+      <h2><%= pluralize(@borrowed_book.errors.count, "error") %> prohibited this Checkout from being performed:</h2>
 
       <ul>
       <% @borrowed_book.errors.full_messages.each do |message| %>
@@ -10,11 +10,7 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :book_id %><br>
-    <%= f.number_field :book_id %>
-  </div>
+  <%= f.hidden_field :book_id, value: params[:book_id] %>
   <div class="field">
     <%= f.label :borrower_id %><br>
     <%= f.number_field :borrower_id %>
@@ -22,4 +18,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  id: <%= params[:book_id]%>
 <% end %>

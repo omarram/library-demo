@@ -23,6 +23,11 @@
         <td><%= link_to book.title, book %></td>
         <td><%= book.publisher %></td>
         <td class="centered">
+          <%= link_to new_borrowed_book_path(book_id: book.id) do %>
+            <span class="glyphicon glyphicon-check"> Checkout</span>
+          <% end %>
+        </td>
+        <td class="centered">
           <%= link_to edit_book_path(book) do %>
             <span class="glyphicon glyphicon-pencil"> Edit</span>
           <% end %>

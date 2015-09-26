@@ -14,6 +14,7 @@ class BorrowedBooksController < ApplicationController
 
   # GET /borrowed_books/new
   def new
+    @params = params[:book_id]
     @borrowed_book = BorrowedBook.new
   end
 
@@ -69,6 +70,6 @@ class BorrowedBooksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def borrowed_book_params
-      params.require(:borrowed_book).permit(:book_id, :borrower_id)
+      params.require(:borrowed_book).permit(:book_id, :borrower_id, :due_date)
     end
 end
