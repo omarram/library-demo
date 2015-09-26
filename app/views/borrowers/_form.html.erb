@@ -1,0 +1,23 @@
+<%= form_for(@borrower) do |f| %>
+  <% if @borrower.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@borrower.errors.count, "error") %> prohibited this borrower from being saved:</h2>
+
+      <ul>
+      <% @borrower.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row">
+    <div class="form-group col-sm-4">
+      <%= f.label :name %><br>
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= f.submit class: "btn btn-primary" %>
+  </div>
+<% end %>

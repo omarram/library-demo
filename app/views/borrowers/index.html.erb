@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Borrower', new_borrower_path, class: "btn btn-primary btn-large pull-right" %>
+
+<h1>Borrowers List</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th class="centered">Number of books Borrowed</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @borrowers.each do |borrower| %>
+      <tr>
+        <td><%= borrower.name %></td>
+        <td class="centered"><%= borrower.name %></td>
+        <td class="centered">
+          <%= link_to edit_borrower_path(borrower) do %>
+            <span class="glyphicon glyphicon-pencil"> Edit</span>
+          <% end %>
+        </td>
+        <td class="centered">
+          <%= link_to borrower, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash"> Destroy</span>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

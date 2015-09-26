@@ -7,6 +7,7 @@ class CreateBooks < ActiveRecord::Migration
       t.string :publisher
       t.date :published_on
       t.string :cover_url
+      t.boolean :on_loan, :default => false
 
       t.timestamps null: false
     end
