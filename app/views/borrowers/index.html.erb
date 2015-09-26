@@ -17,7 +17,7 @@
     <% @borrowers.each do |borrower| %>
       <tr>
         <td><%= borrower.name %></td>
-        <td class="centered"><%= borrower.name %></td>
+        <td class="centered"><%= borrower.books.count %></td>
         <td class="centered">
           <%= link_to edit_borrower_path(borrower) do %>
             <span class="glyphicon glyphicon-pencil"> Edit</span>
