@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :borrowed_books
   resources :borrowers
   resources :authors
   resources :books
