@@ -32,15 +32,17 @@
 <p>
   <strong>Borrowing Status:</strong>
   <% if @book.borrowers.empty? == true%>
-    <%= "The book is available, you can lend it to someone" %>
+    <%= "The book is available, you can lend it to someone by clicking here:" %>
+    <%= link_to new_borrowed_book_path(book_id: @book.id) do %>
+      <span class="glyphicon glyphicon-check"> Checkout</span>
+    <% end %>
   <% else %>
     <%= "The book is borrowed by #{@book.borrowers.first.name}" %>
-  <% end %>
-</p>
-
-<p>
-  <%= link_to borrowed_books_path do %>
-    <span class="glyphicon glyphicon-book"> See Borrowed Books List</span>
+    <p>
+      <%= link_to borrowed_book_path do %>
+        <span class="glyphicon glyphicon-book"> See Checkout</span>
+      <% end %>
+    </p>
   <% end %>
 </p>
 

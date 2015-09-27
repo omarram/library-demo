@@ -1,14 +1,29 @@
-<p id="notice"><%= notice %></p>
+<h1>Checkout Status</h1>
 
-<p>
-  <strong>Book:</strong>
-  <%= @borrowed_book.book_id %>
-</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Book</th>
+      <th class="centered">Borrower</th>
+      <th class="centered">Date checked out</th>
+      <th class="centered">Due date and time</th>
+      <th colspan="1"></th>
+    </tr>
+  </thead>
 
-<p>
-  <strong>Borrower:</strong>
-  <%= @borrowed_book.borrower_id %>
-</p>
+  <tbody>
+      <tr>
+        <td><%= @borrowed_book.book.title %></td>
+        <td class="centered"><%= @borrowed_book.borrower.name %></td>
+        <td class="centered"><%= @borrowed_book.created_at.strftime("%H:%M %p, %A, %B %d, %Y (%Z)") %></td>
+        <td class="centered"><%= @borrowed_book.due_date.strftime("%H:%M %p, %A, %B %d, %Y (%Z)") %></td>
+        <td class="centered">
+          <%= link_to @borrowed_book, method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <span class="glyphicon glyphicon-trash"> Destroy</span>
+          <% end %>
+        </td>
 
-<%= link_to 'Edit', edit_borrowed_book_path(@borrowed_book) %> |
+      </tr>
+  </tbody>
+</table>
 <%= link_to 'Back', borrowed_books_path %>
