@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Borrowed Books List</h1>
 
 <table class="table">
@@ -7,7 +5,8 @@
     <tr>
       <th>Book</th>
       <th class="centered">Borrower</th>
-      <th class="centered">Due Date and Time</th>
+      <th class="centered">Date checked out</th>
+      <th class="centered">Due date and time</th>
       <th colspan="1"></th>
     </tr>
   </thead>
@@ -17,7 +16,8 @@
       <tr>
         <td><%= borrowed_book.book.title %></td>
         <td class="centered"><%= borrowed_book.borrower.name %></td>
-        <td class="centered"><%= borrowed_book.due_date.strftime("%H:%M %p, %A, %B %d, %Y (%Z)") %></td>
+        <td class="centered"><%= borrowed_book.created_at.to_s(:googleformat) %></td>
+        <td class="centered"><%= borrowed_book.due_date.to_s(:googleformat) %></td>
         <td class="centered">
           <%= link_to borrowed_book, method: :delete, data: { confirm: 'Are you sure?' } do %>
             <span class="glyphicon glyphicon-trash"> Destroy</span>

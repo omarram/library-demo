@@ -1,0 +1,1 @@
+Time::DATE_FORMATS[:googleformat] = "%H:%M %p, %A, %B %d, %Y (%Z)"

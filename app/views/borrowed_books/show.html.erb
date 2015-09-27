@@ -15,8 +15,8 @@
       <tr>
         <td><%= @borrowed_book.book.title %></td>
         <td class="centered"><%= @borrowed_book.borrower.name %></td>
-        <td class="centered"><%= @borrowed_book.created_at.strftime("%H:%M %p, %A, %B %d, %Y (%Z)") %></td>
-        <td class="centered"><%= @borrowed_book.due_date.strftime("%H:%M %p, %A, %B %d, %Y (%Z)") %></td>
+        <td class="centered"><%= @borrowed_book.created_at.to_s(:googleformat) %></td>
+        <td class="centered"><%= @borrowed_book.due_date.to_s(:googleformat) %></td>
         <td class="centered">
           <%= link_to @borrowed_book, method: :delete, data: { confirm: 'Are you sure?' } do %>
             <span class="glyphicon glyphicon-trash"> Destroy</span>
