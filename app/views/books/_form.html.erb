@@ -50,18 +50,11 @@
       <%= f.file_field :image, class: "form-control" %>
     </div>
   </div>
+
   <div class="row">
     <div class="form-group col-sm-4">
-      <h4>Authors</h3>
-      <%= hidden_field_tag "book[author_ids][]", nil %>
-      <% Author.all.each do |author| %>
-        <div class="checkbox">
-          <%= label_tag dom_id(author) do %>
-            <%= check_box_tag "book[author_ids][]", author.id, @book.author_ids.include?(author.id), id: dom_id(author) %>
-            <%= author.name %>
-          <% end %>
-        </div>
-      <% end %>
+      <%= f.label :author_ids, 'Select Authors' %>
+      <%= f.select :author_ids, Author.all.collect {|a| [a.name, a.id]}, {}, { multiple: true, class: 'taggable' } %>
     </div>
   </div>
 

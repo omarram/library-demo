@@ -44,6 +44,10 @@ group :development, :test do
   gem 'selenium-webdriver'
   # Needed to Upload images
   gem 'paperclip', '~> 4.3.1'
+  # Needed to improve the UI of selects and multiple-selects
+  gem 'chosen-rails', '~> 1.4.3'
+  # Needed to fix the turbolinks issue preventing browser reload
+  gem 'jquery-turbolinks'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
