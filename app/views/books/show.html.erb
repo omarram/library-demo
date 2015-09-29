@@ -39,7 +39,7 @@
   <% else %>
     <%= "The book is borrowed by #{@book.borrowers.first.name}" %>
     <p>
-      <%= link_to borrowed_book_path do %>
+      <%= link_to borrowed_book_path(@book.borrowed_books.first.id) do %>
         <span class="glyphicon glyphicon-book"> See Checkout</span>
       <% end %>
     </p>
