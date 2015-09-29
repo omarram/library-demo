@@ -31,7 +31,7 @@ class BorrowedBooksController < ApplicationController
 
     respond_to do |format|
       if @borrowed_book.save
-        format.html { redirect_to @borrowed_book, notice: 'Borrowed book was successfully created.' }
+        format.html { redirect_to @borrowed_book, notice: 'The book was successfully checked out.' }
         format.json { render :show, status: :created, location: @borrowed_book }
       else
         @borrowers = Borrower.order('name ASC')
@@ -47,7 +47,7 @@ class BorrowedBooksController < ApplicationController
   def update
     respond_to do |format|
       if @borrowed_book.update(borrowed_book_params)
-        format.html { redirect_to @borrowed_book, notice: 'Borrowed book was successfully updated.' }
+        format.html { redirect_to @borrowed_book, notice: 'The book was successfully checked in.' }
         format.json { render :show, status: :ok, location: @borrowed_book }
       else
         format.html { render :edit }

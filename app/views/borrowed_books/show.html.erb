@@ -7,7 +7,6 @@
       <th class="centered">Borrower</th>
       <th class="centered">Date checked out</th>
       <th class="centered">Due date and time</th>
-      <th colspan="1"></th>
     </tr>
   </thead>
 
@@ -17,12 +16,6 @@
         <td class="centered"><%= @borrowed_book.borrower.name %></td>
         <td class="centered"><%= @borrowed_book.created_at.to_s(:googleformat) %></td>
         <td class="centered"><%= @borrowed_book.due_date.to_s(:googleformat) %></td>
-        <td class="centered">
-          <%= link_to @borrowed_book, method: :delete, data: { confirm: 'Are you sure?' } do %>
-            <span class="glyphicon glyphicon-trash"> Destroy</span>
-          <% end %>
-        </td>
-
       </tr>
   </tbody>
 </table>
