@@ -14,8 +14,12 @@
   <%= f.hidden_field :book_id, value: params[:book_id] %>
   <div class="row">
     <div class="form-group col-sm-4">
-    <%= f.label :borrower_id, "Borrower" %><br>
-    <%= f.select :borrower_id, @borrowers.map {|s| [s.name, s.id]} %>
+      <% if @borrowers.empty? == true%>
+        <%= link_to "Add Borrowers", new_borrower_path %>
+      <% else %>
+        <%= f.label :borrower_id, "Borrower" %><br>
+        <%= f.select :borrower_id, @borrowers.map {|s| [s.name, s.id]} %>      
+      <% end %>
     </div>
   </div>
 
