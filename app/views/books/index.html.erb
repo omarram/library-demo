@@ -22,7 +22,7 @@
         <td><%= link_to book.title, book %></td>
         <td><%= book.publisher %></td>
 
-        <td class="centered">
+        <td>
           <% if book.borrowed_books.empty? == true %>
             <%= link_to new_borrowed_book_path(book_id: book.id) do %>
               <span class="glyphicon glyphicon-check"> Checkout</span>
